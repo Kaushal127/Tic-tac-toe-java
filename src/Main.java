@@ -9,6 +9,7 @@ import winningstrategies.RowWinningStrategy;
 import winningstrategies.WinningStartegy;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class Main {
 
 
         playerList.add(new Player('X', "Kaushal", 1, PlayerType.HUMAN));
-        playerList.add(new Bot('0', "GPT", 2, PlayerType.BOT , DifficultyLevel.EASY) ) ;
+        playerList.add(new Bot('0', "GPT", 2, PlayerType.BOT , DifficultyLevel.MEDIUM) ) ;
 
         winningStartegies.add(new RowWinningStrategy());
         winningStartegies.add(new ColWinningStrategy());
