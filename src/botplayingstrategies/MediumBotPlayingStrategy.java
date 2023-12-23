@@ -67,6 +67,49 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
             }
         }
 
+        int playerRightDiaCount = 0 ;
+        Cell emptyRightDiaCell = null ;
+        for (int i=0 ; i< board.getDimensions();i++){
+
+            for (int j=0 ; j< board.getDimensions();j++){
+
+                if (i==j){
+                    Cell cell = board.getBoard().get(i).get(j) ;
+                    if (CellState.FILLED.equals(cell.getCellState())){
+                        if (PlayerType.HUMAN.equals(cell.getPlayer().getPlayerType())){
+                            playerRightDiaCount++;
+                        }
+                    } else if (CellState.EMPTY.equals(cell.getCellState())){
+                        emptyRightDiaCell = cell ;
+                    }
+                }
+            }
+        }
+        if(playerRightDiaCount==2 && emptyRightDiaCell!=null){
+            return emptyRightDiaCell ;
+        }
+
+        int playerleftDiaCount = 0 ;
+        Cell emptyleftDiaCell = null ;
+        for (int i=0 ; i< board.getDimensions();i++){
+
+            for (int j=0 ; j< board.getDimensions();j++){
+                if (i + j == board.getDimensions() - 1){
+                    Cell cell = board.getBoard().get(i).get(j) ;
+                    if (CellState.FILLED.equals(cell.getCellState())){
+                        if (PlayerType.HUMAN.equals(cell.getPlayer().getPlayerType())){
+                            playerleftDiaCount++;
+                        }
+                    } else if (CellState.EMPTY.equals(cell.getCellState())){
+                        emptyleftDiaCell = cell ;
+                    }
+                }
+            }
+        }
+        if(playerleftDiaCount==2 && emptyleftDiaCell!=null){
+            return emptyleftDiaCell ;
+        }
+
         return null ;
     }
 
@@ -104,6 +147,49 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                  return emptyColCell ;
              }
         }
+        int ownRightDiaCount = 0 ;
+        Cell emptyRightDiaCell = null ;
+        for (int i=0 ; i< board.getDimensions();i++){
+
+            for (int j=0 ; j< board.getDimensions();j++){
+
+                if (i==j){
+                    Cell cell = board.getBoard().get(i).get(j) ;
+                    if (CellState.FILLED.equals(cell.getCellState())){
+                        if (PlayerType.BOT.equals(cell.getPlayer().getPlayerType())){
+                            ownRightDiaCount++;
+                        }
+                    } else if (CellState.EMPTY.equals(cell.getCellState())){
+                        emptyRightDiaCell = cell ;
+                    }
+                }
+            }
+        }
+        if(ownRightDiaCount==2 && emptyRightDiaCell!=null){
+            return emptyRightDiaCell ;
+        }
+
+        int ownleftDiaCount = 0 ;
+        Cell emptyleftDiaCell = null ;
+        for (int i=0 ; i< board.getDimensions();i++){
+
+            for (int j=0 ; j< board.getDimensions();j++){
+                if (i + j == board.getDimensions() - 1){
+                    Cell cell = board.getBoard().get(i).get(j) ;
+                    if (CellState.FILLED.equals(cell.getCellState())){
+                        if (PlayerType.BOT.equals(cell.getPlayer().getPlayerType())){
+                            ownleftDiaCount++;
+                        }
+                    } else if (CellState.EMPTY.equals(cell.getCellState())){
+                        emptyleftDiaCell = cell ;
+                    }
+                }
+            }
+        }
+        if(ownleftDiaCount==2 && emptyleftDiaCell!=null){
+            return emptyleftDiaCell ;
+        }
+
         return  null ;
     }
 }
