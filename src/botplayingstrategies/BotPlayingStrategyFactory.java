@@ -5,6 +5,12 @@ import Models.DifficultyLevel;
 public class BotPlayingStrategyFactory {
 
     public static BotPlayingStrategy getBotPlayingStrategyForDifficultyLevel(DifficultyLevel difficultyLevel){
-        return new MediumBotPlayingStrategy() ;
+        if(difficultyLevel==DifficultyLevel.EASY){
+            return new EasyBotPlayingStrategy() ;
+        } else if(difficultyLevel==DifficultyLevel.MEDIUM){
+            return new MediumBotPlayingStrategy() ;
+        } else {
+            return new HardBotPlayingStrategy() ;
+        }
     }
 }

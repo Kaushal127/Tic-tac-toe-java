@@ -45,7 +45,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                     emptyRowCell = cell ;
                 }
             }
-            if (playerRowCount==2 && emptyRowCell!=null){
+            if (playerRowCount== board.getDimensions()-1 && emptyRowCell!=null){
                 return emptyRowCell ;
             }
         }
@@ -62,7 +62,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                     emptyColCell = cell ;
                 }
             }
-            if(playerColCount==2 && emptyColCell!=null){
+            if(playerColCount== board.getDimensions()-1 && emptyColCell!=null){
                 return emptyColCell ;
             }
         }
@@ -85,7 +85,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                 }
             }
         }
-        if(playerRightDiaCount==2 && emptyRightDiaCell!=null){
+        if(playerRightDiaCount== board.getDimensions()-1 && emptyRightDiaCell!=null){
             return emptyRightDiaCell ;
         }
 
@@ -106,7 +106,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                 }
             }
         }
-        if(playerleftDiaCount==2 && emptyleftDiaCell!=null){
+        if(playerleftDiaCount== board.getDimensions()-1 && emptyleftDiaCell!=null){
             return emptyleftDiaCell ;
         }
 
@@ -126,7 +126,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                       emptyRowCell = cell ;
                   }
               }
-              if (ownRowCount==2 && emptyRowCell!=null){
+              if (ownRowCount==board.getDimensions()-1 && emptyRowCell!=null){
                   return emptyRowCell ;
               }
         }
@@ -143,7 +143,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                      emptyColCell = cell ;
                  }
              }
-             if(ownColCount==2 && emptyColCell!=null){
+             if(ownColCount==board.getDimensions()-1 && emptyColCell!=null){
                  return emptyColCell ;
              }
         }
@@ -165,7 +165,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                 }
             }
         }
-        if(ownRightDiaCount==2 && emptyRightDiaCell!=null){
+        if(ownRightDiaCount==board.getDimensions()-1 && emptyRightDiaCell!=null){
             return emptyRightDiaCell ;
         }
 
@@ -186,7 +186,7 @@ public class MediumBotPlayingStrategy implements  BotPlayingStrategy{
                 }
             }
         }
-        if(ownleftDiaCount==2 && emptyleftDiaCell!=null){
+        if(ownleftDiaCount==board.getDimensions()-1 && emptyleftDiaCell!=null){
             return emptyleftDiaCell ;
         }
 

@@ -19,13 +19,14 @@ public class Main {
     public static void main(String[] args) throws DuplicateSymbolException, PlayersCountMismatchException, MorethanOneBotException {
         GameController gameController = new GameController() ;
         Scanner scanner = new Scanner(System.in) ;
-        int dimension = 3 ;
+        int dimension = 4 ;
         List<Player> playerList = new ArrayList<>() ;
         List<WinningStartegy> winningStartegies = new ArrayList<>() ;
 
 
         playerList.add(new Player('X', "Kaushal", 1, PlayerType.HUMAN));
-        playerList.add(new Bot('0', "GPT", 2, PlayerType.BOT , DifficultyLevel.MEDIUM) ) ;
+        playerList.add(new Player('#', "Chetan", 1, PlayerType.HUMAN));
+        playerList.add(new Bot('0', "GPT", 2, PlayerType.BOT , DifficultyLevel.MEDIUM ) ) ;
 
         winningStartegies.add(new RowWinningStrategy());
         winningStartegies.add(new ColWinningStrategy());
